@@ -1,0 +1,123 @@
+
+
+html, body, #app{
+	width: 100%;
+	height: 100%;
+	touch-action: none;
+	position: relative
+}
+
+.header{
+	width:100%;
+	height:50px;
+	background: #282828;
+	color:#999;
+	line-height: 50px;
+	border-bottom: 1px solid #000;
+	position: relative;
+	overflow: hidden;
+	box-sizing: border-box;
+	
+}
+.header .menu{
+	display: block;
+	width:50px;
+	height:50px;
+	border-right:1px solid #666;
+	text-align: center;
+	font-size: 14px;
+}
+.header .cont{
+	overflow: hidden;
+	height:100%;
+	width:86%;
+	position: relative;
+	left:51px;
+	top:-50px;
+}
+.header h2{
+	position: absolute;
+	left: 0px;
+	top:0;
+	font-size: 14px;
+	color:#fff;
+	padding-left: 10px;
+}
+.header .city{
+	position: absolute;
+	right: 51px;
+	top:0;
+	font-size: 14px;
+	padding-left: 10px;
+}
+.header .city i{
+	display: inline-block;
+	margin:0 5px;
+	transform: scale(0.8);
+	font-weight: 900;
+}
+.header .me{
+	display: block;
+	width:50px;
+	height:50px;
+	border-right:1px solid #000;
+	text-align: center;
+	font-size: 16px;
+	color:#ccc;
+	position: absolute;
+	right:0;
+	top:0;
+}
+.cover{
+	width:100%;
+	position: absolute;
+	top:50px;
+	left: 0;
+	bottom: 0;
+	z-index: 99;
+	background: rgba(0,0,0,0.5);
+	transition:all 0.4s;
+}
+.leftbar{
+	width:265px;
+	position: absolute;
+	left: 0;
+	top:50px;
+	bottom: 0;
+	background: #282828;
+	border-top:1px solid #666;
+	z-index: 100;
+	transition:all 1s;
+}
+.leftbar a{
+display: block;
+color:#fff;
+width:100%;
+height:50px;
+border-bottom: 1px solid #666;
+padding: 0 16px;
+box-sizing: border-box;
+line-height:50px;
+font-size: 14px;
+color:#888;
+}
+.leftbar a span{
+	font-size: 18px;
+	display: block;
+	float: right;
+	transform:rotate(-90deg);
+}
+.page{
+	width:100%;
+	position:absolute;
+	top:50px;
+	left:0;
+	bottom: 0;
+	background: greenyellow;
+}
+
+
+
+
+
+
