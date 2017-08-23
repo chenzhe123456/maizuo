@@ -14,7 +14,7 @@ export default class AppHeader extends Component{
 				<span class="menu iconfont" onClick={this.menu.bind(this)}  >&#xe644;</span>
 				<div class="cont" onClick={this.bar.bind(this)}>
 				<h2>{this.props.title}</h2>
-				<p class="city">{this.state.city}<i class="iconfont">&#xe64b;</i></p>
+				<Link to='/city' class="city">{this.state.city}<i class="iconfont">&#xe64b;</i></Link>
 				<Link to='/me'><span class="me iconfont">&#xe643;</span></Link>
 				</div>
 			</header>

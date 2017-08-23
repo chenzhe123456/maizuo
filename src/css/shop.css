@@ -1,0 +1,167 @@
+#shop{
+    background: #F2F2F2;
+    overflow: auto
+}
+.shop .ban{
+    height:108px;
+    width:100%;
+    background: palegreen;
+}
+.shop .ban img{
+    width:100%;
+}
+.shop .ban .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #000;
+    opacity: .2;
+    margin: 0 10px;
+}
+ .shop .ban .swiper-pagination-bullet-active {
+     background: #000;
+    opacity: .8;
+ }
+.shop .nav {
+    width:100%;
+    background-color: #fff;
+    padding: 15px 0;
+    margin-bottom: 8px;
+}
+.shop .nav .mark{
+    width: 25%;
+    height: 100%;
+    margin: 8px 0;
+    text-align: center;
+    display: inline-block;
+}
+.shop .nav .mark img{
+    width: 40px;
+}
+.shop .nav .mark span{
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    color: #323232
+}
+.shop .life{
+    overflow: hidden;
+    margin-bottom: 8px;
+    padding:0 10px;
+    background: #fff;
+}
+.shop .life .live {
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 10px 0;
+}
+.shop .life .live  img{
+    width:97%;
+}
+.shop .main{
+    max-width: 600px;
+    min-width: 320px;
+}
+.shop .main .stat{
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+.shop .main .stat .img{
+    width:100%;
+    display: block;
+}
+.shop .main .stat .icon{
+    width:100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    margin-top:5px;
+}
+.shop .main .stat .icon .per{
+    display: inline-block;
+    width: 30%;
+}
+.shop .main .stat .icon .per img{
+    width: 85px;
+    height:85px;
+}
+.shop .main .stat .icon .per p{
+    width:98px;
+    height:12px;
+    line-height: 12px;
+    margin:12px 0;
+    overflow: hidden;
+}
+.shop .main .stat .icon .per span{
+    display: block;
+    width:100%;
+    height:12px;
+    line-height: 12px;
+    margin:12px 0;
+    color:#ff6640;
+}
+.shop .goods{
+    margin: 0 auto;
+    max-width: 600px;
+    min-width: 320px;
+}
+.shop .goods .title{
+    height: 33px;
+    background-color: #f2f2f2;
+    line-height: 33px;
+    font-size: 13px;
+    text-align: center;
+    color: #323232;
+    margin-bottom: 8px;
+}
+.shop .goods .cargo{
+    background-color: #f2f2f2;
+    min-height: 510px;
+    padding: 0  10px;
+    box-sizing: border-box;
+}
+.shop .goods .cargo .self{
+    position: relative;
+    float: left;
+    width: 49.2%;
+    text-align: center;
+    margin-top: 5px;
+    background: #fff;
+}
+.shop .goods .cargo .self:nth-child(2n){
+    float:right;
+}
+.shop .goods .cargo .self img{
+    width:100%;
+    margin-bottom: 5px;
+}
+.shop .goods .cargo .self h5{
+    font-size: 12px;
+    height: 34px;
+    color: #323232;
+    text-align: left;
+    padding-left: 5px;
+}
+.shop .goods .cargo .self p{
+    text-align: left;
+    padding-bottom: 10px;
+}
+.shop .goods .cargo .self p span{
+    font-size: 13px;
+    color: #ff5000;
+    padding-left: 6px;
+}
+.shop .goods .cargo .self p i{
+    font-size: 12px;
+    font-style: normal;
+    font-size: 9px;
+    color: #999;
+    margin-left: 15px
+}
+
+
+

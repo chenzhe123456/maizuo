@@ -10,6 +10,7 @@ import Cinema from './pages/Cinema.js'
 import Movies from './pages/Movies.js'
 import Shop from './pages/Shop.js'
 import Card from './pages/Card.js'
+import City from './pages/City.js'
 
 
 import './css/App.css'
@@ -26,7 +27,7 @@ export default class App extends Component {
 
 		return(
 			<Router>
-				<div>
+				<div class="allpage">
 					<AppHeader title={this.state.headerTitle} header={this.BarAction.bind(this)}  bar={this.hid.bind(this)} />
 										
 						<Route  path='/' render = {(location) =>{
@@ -46,6 +47,7 @@ export default class App extends Component {
 						<Route  path='/shop'  component={Shop} />
 						<Route  path='/movies'  component={Movies} />
 						<Route  path='/cinema'  component={Cinema} />
+						<Route  path='/City'  component={City} />
 				</div>
 			</Router>
 		)
