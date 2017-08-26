@@ -1,0 +1,102 @@
+.card{
+    width:100%;
+    background: #fff;
+}
+.card .care{
+    overflow: hidden;
+}
+.card .care .two{
+    overflow: hidden;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 15px;
+    color: #ccc;
+}
+.card .care .two li{
+    width: 50%;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    line-height: 45px;
+    transition: all 0.2s ;
+    border-bottom: 1px solid #ff7100;
+    box-shadow: 0 -1px #ff7100 inset; 
+}
+.card .care .into{
+    overflow: hidden;
+    padding: 0 32px
+}
+.card .care .buy{
+    display: none;
+}
+.card .care .into .name, .card .care .into .pwd{
+    margin-top: 48px ;
+    position: relative;
+    width:100%;
+    height:12px;
+    border:1px solid #ccc;
+    border-top:0
+}
+.card .care .into .name span, .card .care .into .pwd span{
+     width:15%;
+     height:24px;
+     position: absolute;
+     top:-15px;
+     left: 0px;
+     text-align: center;
+     line-height: 24px;
+     font-size: 14px;
+}
+.card .care .into  input{
+    width:80%;
+    height:24px;
+    position: absolute;
+    top:-15px;
+    left:20%;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.card .care  .btn{
+    display: block;
+    width: 163px;
+    background-color: #fe8233;
+    color: #fff;
+    border: none;
+    margin: 0 auto;
+    border-radius: 36px;
+    margin-top: 50px;
+    padding: 8px 12px;
+    font-size: 15px;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

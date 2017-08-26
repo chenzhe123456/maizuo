@@ -23,9 +23,9 @@ function getShopData(){
     })
 }
 // 卖座商城http://aura.maizuo.com/api/recommend/home?page=1&num=20
-function getShopGoods(){
+function getShopGoods(i){
     return new Promise((resolve,reject)=>{
-        axios.get(`${Api.shopGoods}?page=1&num=20`)
+        axios.get(`${Api.shopGoods}?page=${i}&num=20`)
         .then((res)=>{
             // console.log(res.data.data.list)
             resolve(res.data.data.list)

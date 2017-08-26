@@ -15,14 +15,16 @@ export default class Home extends Component {
         constructor(){
             super();
             this.state = {
-                msg:'数据加载中...',
+                msg:'数据加载中 . . .',
                 bannerData : [],
                 nowData : [],
-                willData : []
+                willData : [],
+                show:false
             }
         }
 
     render(){
+         let showstyle = {transform:this.state.show?'translateY(0px)':'translateY(70px)'}
         return(
              <div class="page home" id="homes" ref='home'>
                 <div class="pages">
@@ -54,7 +56,7 @@ export default class Home extends Component {
                             )
                         })
                     }
-                    <p><Link to='/' class="more">更多热映电影</Link></p>
+                    <p><Link to='/Movies' class="more">更多热映电影</Link></p>
                     <b>即将上映</b>
                 </div>
                     {/*即将上映  */}
@@ -72,9 +74,13 @@ export default class Home extends Component {
                             )
                         })
                     }
-                    <Link to="" class="more">更多即将上映电影</Link>
-                </div>                      
+                    <Link to="/Movies" class="more">更多即将上映电影</Link>
+                </div>
+                                     
              </div>
+             <div class="top" style={showstyle} onClick={this.topAction.bind(this)}>
+                    <i></i><span class="iconfont">&#xe64e;</span>
+            </div> 
             </div> 
         )
        
@@ -99,24 +105,30 @@ export default class Home extends Component {
                 this.setState({bannerData:data},function() {
                     mySwiper.update();
                  });
+                })
+            }
+
+            
+            // 现在播放电影的数据：
+            homeData.nowPlayingData()
+            .then((data)=>{
+                this.setState({nowData:data});
+            })
+            // 即将上映的电影数据：
+            homeData.willSoonData()
+            .then((data)=>{
+                this.setState({willData:data});
             })
         }
+    topAction(){
 
-        
-        // 现在播放电影的数据：
-        homeData.nowPlayingData()
-        .then((data)=>{
-            this.setState({nowData:data});
-        })
-        // 即将上映的电影数据：
-        homeData.willSoonData()
-        .then((data)=>{
-            this.setState({willData:data});
-        })
+        // console.log(myScroll.y);
+       myScroll.scrollTo(0, 0, 1000)
+       this.setState({show:false})
     }
-    
+
+
     componentDidMount(){
-      
         // console.log(this.state.bannerData)
         mySwiper = new Swiper('.swiper-container',{
         })
@@ -130,6 +142,14 @@ export default class Home extends Component {
 
         myScroll.on('scroll', ()=>{
             myScroll.refresh()
+            // console.log(myScroll.y)
+            // console.log(this.state.show)
+            if(myScroll.y <= -150){
+                this.setState({show:true})
+                // console.log(this.state.show)
+            }else{
+                 this.setState({show:false})
+            }
         })
 
 

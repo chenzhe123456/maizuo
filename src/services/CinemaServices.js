@@ -9,6 +9,9 @@ function getCinemaData(){
         .then((res)=>{            
             var arr = res.data.data.cinemas
             // console.log(arr)
+            if(arr == null ){
+                getCinemaData()
+            }else{
             var quyus = [];
             var arrList = [];
             arr.map((item) => {
@@ -21,6 +24,7 @@ function getCinemaData(){
                 var obj = {};
                 obj.name = item;
                 obj.list = [];
+                obj.style = 'none'
 
                 arr.forEach(function(items) {
                     if (items.district.name === item) {
@@ -29,7 +33,11 @@ function getCinemaData(){
                 })
                 arrList.push(obj);
             })
+            // 存到 sessionStorage 里面
+            window.sessionStorage.setItem('arrt',JSON.stringify(arrList))
             resolve(arrList)
+            }
+           
         })
         .catch((error)=>{
             console.log(error)

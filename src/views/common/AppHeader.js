@@ -1,12 +1,17 @@
 import React ,{Component} from 'react'
 import {Link} from 'react-router-dom'
 
+import store from '../../store'
+
 export default class AppHeader extends Component{
 	constructor(){
+		//  console.log(store.getState())
 		super();
 		this.state = {
-			city:'深圳'
+			city : store.getState().city
 		}
+		this.isactive=true
+		console.log(this.state.city)
 	}
 	render(){
 		return(
@@ -20,12 +25,23 @@ export default class AppHeader extends Component{
 			</header>
 		)
 	}
-	
+	// 监听store上state数据的变化
+	componentWillMount(){
+		if(this.isactive){
+			store.subscribe(() =>{  //监听结构
+				this.setState({city:store.getState().city})
+			})
+		}
+		
+	}
 	menu(){
 		this.props.header()
 	}
 	bar(){
 		this.props.bar()
+	}
+	componentDidMount(){
+		this.setState({isactive:false})
 	}
 	
 }

@@ -23,7 +23,29 @@ function getWillData(j){
         axios.get(`${Api.moviesWillApi}?page=${j}&count=7`)
         .then((response)=>{
             // console.log(response.data.data.films)
-            resolve(response.data.data.films)
+             var datas = response.data.data.films
+             var obj = {}
+             var date = null
+             var mm = null
+             var dd = null
+             var ww = null
+             var arrw = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+             datas.map((item,index)=>{
+                obj =  item
+                date = new Date(obj.premiereAt)
+                mm = date.getMonth() + 1
+                obj.mm = mm
+                dd = date.getDate()
+                obj.dd = dd
+                ww = date.getDay()
+                arrw.map((item,index)=>{
+                    if(ww == index){
+                    obj.ww = item
+                    }
+                })    
+            })
+ 
+            resolve(datas)
         })
         .catch((error)=>{
             console.log(error)

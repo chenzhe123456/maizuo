@@ -115,12 +115,41 @@ html, body, #app{
 }
 .page{
 	width:100%;
-	position:absolute;
-	top:50px;
-	left:0px;
 	flex:1;
-	height:617px;
 	overflow: hidden;
+}
+.page  .top {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0,0,0,0.7);
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 500;
+    transition:all 1s;
+}
+
+.page  .top i{
+    display: block;
+    margin: 0 auto;
+    width:20px;
+    height:3px;
+    background: #fff;
+    margin-top:12px;
+}
+.page  .top span{
+    display: block;
+    width:25px;
+    height:25px;
+    font-size: 24px;
+    color:#fff;
+    line-height: 25px;
+    margin:0 auto;
 }
 .page .pages{
 	width:100%;
@@ -151,7 +180,14 @@ html, body, #app{
     background: #fff;
 }
 
+.example-appear {
+  transform: translateY(-100%)
+}
 
+.example-appear.example-appear-active {
+  transform: translateY(0%);  
+  transition: 0.5s;
+}
 
 
 

@@ -20,7 +20,7 @@ export default class LeftBar extends Component {
 				<div class="cover"   style={cover} onClick={this.hid.bind(this)} ></div>
 				<div class ="leftbar" style={leftbar} >
 					{data.map((item,index)=>{
-							return <Link key={index} to={item.path} onClick={this.barAction.bind(this,item)} >{item.tilte} <span class="iconfont">&#xe64b;</span></Link>
+						return <Link key={index} to={item.path} onClick={this.barAction.bind(this,item)} >{item.tilte} <span class="iconfont">&#xe64b;</span></Link>
 					})
 					}
 				</div>

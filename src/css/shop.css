@@ -1,6 +1,6 @@
-#shop{
+.shop{
     background: #F2F2F2;
-    overflow: auto
+    overflow: hidden;
 }
 .shop .ban{
     height:108px;
@@ -61,8 +61,7 @@
     width:97%;
 }
 .shop .main{
-    max-width: 600px;
-    min-width: 320px;
+    overflow: hidden   
 }
 .shop .main .stat{
     padding: 10px;
@@ -106,8 +105,7 @@
 }
 .shop .goods{
     margin: 0 auto;
-    max-width: 600px;
-    min-width: 320px;
+    overflow: hidden;
 }
 .shop .goods .title{
     height: 33px;
@@ -116,11 +114,11 @@
     font-size: 13px;
     text-align: center;
     color: #323232;
-    margin-bottom: 8px;
+
 }
 .shop .goods .cargo{
     background-color: #f2f2f2;
-    min-height: 510px;
+    overflow: hidden;
     padding: 0  10px;
     box-sizing: border-box;
 }

@@ -14,6 +14,9 @@ const cinemaApi = '/v4/api/cinema'
 const shopApi = '/api/ad/list'
 // 卖座商城http://aura.maizuo.com/api/recommend/home?page=1&num=20
 const shopGoods = '/api/recommend/home'
+// http://m.maizuo.com/v4/api/city?__t=1503660061573
+const cityApi = '/v4/api/city'
+
 export default{
     homeApi,
     nowPLaying,
@@ -22,5 +25,6 @@ export default{
     moviesWillApi,
     cinemaApi,
     shopApi,
-    shopGoods
+    shopGoods,
+    cityApi
 }

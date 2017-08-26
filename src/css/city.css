@@ -1,0 +1,66 @@
+.cities{
+    width:100%;
+    background: #fff;
+}
+.cities .pages .gps{
+    width:100%
+}
+.cities .pages h3{
+    width:100%;
+    box-sizing: border-box;
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 40px;
+    background-color: #ebebeb;
+}
+.cities .pages p{
+    overflow: hidden;
+    width:100%;
+    font-size: 16px;
+    line-height: 46px;
+    text-align: center;
+    color: #838383;
+    border-bottom: #ebebeb 1px solid;
+}
+.cities .pages p span{
+    width:25%;
+    height:100%;
+    display: block;
+    float: left;
+}
+.cities .pages .gps p span{
+      color: #e2941a
+}
+.cities .pages .font p span,.cities .pages .place p span{
+   border-bottom: #ebebeb 1px solid;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

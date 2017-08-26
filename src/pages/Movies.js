@@ -17,6 +17,7 @@ export default class Movies extends Component {
             moviesdata : [] ,
             willdata : [] ,
             display:true,
+            shows:false,
             show:false
         }
     }
@@ -27,9 +28,10 @@ export default class Movies extends Component {
             borderBottom:'2px solid orange'
             }
         let shows1 = this.state.display ? activeStyle:null
-        let shows2 = this.state.show ? activeStyle:null
+        let shows2 = this.state.shows? activeStyle:null
         let shows3 = this.state.display?{display:'block'}:{display:'none'}
         let shows4 = this.state.display?{display:'none'}:{display:'block'}
+        let showstyle = {transform:this.state.show?'translateY(0px)':'translateY(70px)'}      
         return(
             <div class="page movies" id="movies" ref='movies'>
                 <div class="pages face">
@@ -42,7 +44,7 @@ export default class Movies extends Component {
                         {
                             this.state.moviesdata.map((item,index)=>{
                                return(
-                                    <Link to="" key={index} >
+                                    <Link to="Movies" key={index} >
                                     <div class="img">
                                         <img src={item.cover.origin} />
                                     </div>    
@@ -64,14 +66,14 @@ export default class Movies extends Component {
                         {
                             this.state.willdata.map((item,index)=>{
                               return(
-                                    <Link to="" key={index} >
+                                    <Link to="/Movies" key={index} >
                                         <div class="img">
                                             <img src={item.cover.origin} />
                                         </div>    
                                         <div class="tip">
                                             <h3>{item.name}</h3>
                                             <span>{item.intro}</span>
-                                            <p><strong>8月25日上映</strong><b>星期五</b></p>
+                                            <p><strong>{item.mm}月{item.dd}日上映</strong><b>{item.ww}</b></p>
                                             <div class="num">                                        
                                             ›
                                             </div>
@@ -86,6 +88,9 @@ export default class Movies extends Component {
                    <span> {this.state.msg} </span>
                 </div>     
             </div>
+            <div class="top" style={showstyle} onClick={this.topAction.bind(this)} >
+                    <i></i><span class="iconfont">&#xe64e;</span>
+            </div>
         </div>
         )
         
@@ -94,27 +99,31 @@ export default class Movies extends Component {
 
     displaydata(){
             this.setState({display:true})
-             this.setState({show:false})
+             this.setState({shows:false})
         }
     showdata(){
             this.setState({display:false})
-             this.setState({show:true})
+             this.setState({shows:true})
     }
 
     componentWillMount(){
         moviesData.getMoviesData(i)
         .then((data)=>{
-            // console.log(data)
+            console.log(data)
             this.setState({moviesdata:this.state.moviesdata.concat(data)})
-             console.log(this.state.moviesdata)
+            //  console.log(this.state.moviesdata)
         })
         moviesData.getWillData(j)
         .then((data)=>{
-            // console.log(data)
             this.setState({willdata:this.state.willdata.concat(data)})
         })
     }
+      topAction(){
+         myScroll.scrollTo(0, 0, 1000)
+        this.setState({show:false}) 
+    }
     componentDidMount(){
+       
         //下拉加载更多
        myScroll = new IScroll(this.refs.movies,{
             bounce: true,
@@ -122,6 +131,17 @@ export default class Movies extends Component {
        })
 
         myScroll.on('scroll', ()=>{
+            myScroll.refresh()
+             if(myScroll.y <= -150){
+                this.setState({show:true})
+                // console.log(this.state.show)
+            }else{
+                 this.setState({show:false})
+            }
+        })    
+        
+        // console.log(myScroll.maxScrollY )
+        myScroll.on('scrollStart', ()=>{
             myScroll.refresh()
             if(myScroll.y - 100 <=  myScroll.maxScrollY && i <= 8 ){                           
                       i++;                     
